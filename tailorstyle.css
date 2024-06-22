@@ -721,3 +721,43 @@ margin: 10;
     margin-bottom: 20px; /* Adjust as per your design */
   }
 }
+/* styles.css */
+
+.row-2 {
+  padding: 50px 0;
+  background: #f9f9f9;
+}
+
+.row-2 .title::after {
+  background: #ff523b; /* Adjust color as needed */
+}
+
+.row-2 .col-4 {
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.row-2 .col-4:hover {
+  transform: translateY(-10px);
+}
+
+.row-2 .col-4 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.row-2 .col-4 h4 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.row-2 .col-4 p {
+  font-size: 14px;
+  color: #777;
+}
