@@ -11,7 +11,79 @@ body {
   display: flex;
   align-items: center;
   padding: 20px;
+/* Logo and name styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 100px; /* Adjust size as needed */
+  margin-right: 10px;
+}
+
+.logo-name {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Poppins',sans-serif ; /* Fancy font */
+  color: #000000; /* Adjust color as needed */
+
+}
+
+/* Latest products section */
+.row-2 {
+  padding: 50px 0;
+  background: #f9f9f9;
+}
+
+.row-2 .title::after {
+  background: #000000; /* Adjust color as needed */
+}
+
+.row-2 .col-4 {
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.row-2 .col-4:hover {
+  transform: translateY(-10px);
+}
+
+.row-2 .col-4 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.row-2 .col-4 h4 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.row-2 .col-4 p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Slick Slider styles */
+.slick-slide {
+  margin: 0 10px;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #030000;
+}
 }
 nav{
   flex: 1;
