@@ -713,3 +713,11 @@ margin: 10;
     margin: 10px 0;
   }
 }
+/* latest product*/
+@media only screen and (max-width: 768px) {
+  .col-4 {
+    flex-basis: 50%;
+    min-width: calc(50% - 10px); /* Adjust margin or padding accordingly */
+    margin-bottom: 20px; /* Adjust as per your design */
+  }
+}
