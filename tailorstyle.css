@@ -643,3 +643,73 @@ img.menu-icon {
 padding: 10;
 margin: 10;
 }
+/* Featured Products Carousel */
+.featured-products {
+  position: relative;
+  overflow: hidden;
+  margin: 50px 0;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-btn {
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.carousel-btn-left {
+  left: 10px;
+}
+
+.carousel-btn-right {
+  right: 10px;
+}
+
+/* Latest Products Grid */
+.latest-products .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.latest-products .col-4 {
+  flex: 1 0 21%;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .latest-products .col-4 {
+    flex: 1 0 46%;
+    margin: 2%;
+  }
+
+  .carousel-btn {
+    font-size: 1.5em;
+  }
+
+  .carousel-track {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .latest-products .col-4 {
+    flex: 1 0 100%;
+    margin: 10px 0;
+  }
+}
