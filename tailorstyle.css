@@ -94,13 +94,13 @@ a{
 }
 .col-4 {
   flex-basis: 25%;
-  padding: 10px;
+  padding: 5px;
   min-width: 200px;
   margin-bottom: 50px;
   transition: transform 0.5;
 }
 .col-4 img {
-  width: 100%;
+  width: 80%;
 }
 .title {
   text-align: center;
