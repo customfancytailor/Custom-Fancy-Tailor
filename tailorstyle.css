@@ -471,7 +471,7 @@ color: #bbbbbb;
   
   .category-scroller {
       display: flex;
-      animation: scroll 50s linear infinite;
+      animation: scroll 80s linear infinite;/*scroll fast*/
       cursor: pointer;
 
   }
