@@ -1,49 +1,48 @@
-//categories
-document.addEventListener('DOMContentLoaded', () => {
-    const scroller = document.querySelector('.category-scroller');
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.category-scroller-container');
     let isDown = false;
     let startX;
     let scrollLeft;
 
-    scroller.addEventListener('mousedown', (e) => {
+    container.addEventListener('mousedown', (e) => {
         isDown = true;
-        scroller.classList.add('active');
-        startX = e.pageX - scroller.offsetLeft;
-        scrollLeft = scroller.scrollLeft;
+        container.classList.add('active');
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
     });
 
-    scroller.addEventListener('mouseleave', () => {
+    container.addEventListener('mouseleave', () => {
         isDown = false;
-        scroller.classList.remove('active');
+        container.classList.remove('active');
     });
 
-    scroller.addEventListener('mouseup', () => {
+    container.addEventListener('mouseup', () => {
         isDown = false;
-        scroller.classList.remove('active');
+        container.classList.remove('active');
     });
 
-    scroller.addEventListener('mousemove', (e) => {
+    container.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
-        const x = e.pageX - scroller.offsetLeft;
-        const walk = (x - startX) * 3; //scroll-fast
-        scroller.scrollLeft = scrollLeft - walk;
-    });
-});
-// for touch event  // For touch events
-    scroller.addEventListener('touchstart', (e) => {
-        isDown = true;
-        startX = e.touches[0].pageX - scroller.offsetLeft;
-        scrollLeft = scroller.scrollLeft;
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll speed
+        container.scrollLeft = scrollLeft - walk;
     });
 
-    scroller.addEventListener('touchend', () => {
+    container.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - container.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll speed
+        container.scrollLeft = scrollLeft - walk;
+    });
+
+    container.addEventListener('touchend', () => {
         isDown = false;
     });
-
-    scroller.addEventListener('touchmove', (e) => {
-        if (!isDown) return;
-        const x = e.touches[0].pageX - scroller.offsetLeft;
-        const walk = (x - startX) * 3; //scroll-fast
-        scroller.scrollLeft = scrollLeft - walk;
-    });
+});

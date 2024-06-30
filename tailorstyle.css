@@ -459,70 +459,63 @@ color: #bbbbbb;
     }
 /*----categore---*/
 
-    .category-scroller-container {
-      overflow: hidden;
-      white-space: nowrap;
-      width: 100%;
-      padding: 20px 0;
-      background-color: #f9f9f9;
-      position: relative;
-      
-  }
-  
-  .category-scroller {
-      display: flex;
-      animation: scroll 80s linear infinite;/*scroll fast*/
-      cursor: pointer;
+    /* Category Scroller Container */
+.category-scroller-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
 
+.category-scroller {
+  display: flex;
+  animation: scroll 80s linear infinite;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.category {
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.category img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.category p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Hide scrollbar */
+.category-scroller-container::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
   }
-  
-  .category {
-      display: inline-block;
-      text-align: center;
-      margin: 0 10px;
+  100% {
+      transform: translateX(-50%);
   }
-  
-  .category img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-  }
-  .category-container{
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  } 
-  
-  .category p {
-      margin: 0;
-      font-size: 14px;
-      color: #333;
-      margin-top: 10px;/*--to give space in image*/
-  }
-  
-  @keyframes scroll {
-      0% {
-          transform: translateX(0);
-      }
-      100% {
-          transform: translateX(-50%);
-      }
-  }
-  
-  /* To support touch and mouse scroll */
-  .category-scroller-container {
-      overflow: hidden;
-  }
-  
-  .category-scroller {
-      display: flex;
-      transition: transform 0.2s;
-  }
-  
-  .category-scroller-container:hover .category-scroller {
-      animation-play-state: paused;
-  }
+}
+
+/* Pause animation on hover */
+.category-scroller-container:hover .category-scroller {
+  animation-play-state: paused;
+}
 
     /*------all prouducts page----*/
     .row-2{
