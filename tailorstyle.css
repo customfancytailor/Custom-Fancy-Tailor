@@ -597,11 +597,6 @@ color: #bbbbbb;
   border-radius: 10px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
 
 section {
   margin: 40px 0;
@@ -703,7 +698,7 @@ header nav ul li a:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding:0  20px;
 }
 
 .contact-info {
@@ -834,6 +829,7 @@ margin: 10;
   right: 10px;
 }
 
+
 /* Latest Products Grid */
 .latest-products .row {
   display: flex;
@@ -881,10 +877,13 @@ margin: 10;
 .row-2 {
   padding: 50px 0;
   background: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .row-2 .title::after {
-  background: #ff523b; /* Adjust color as needed */
+  background: #ff523b;
 }
 
 .row-2 .col-4 {
@@ -892,18 +891,21 @@ margin: 10;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background: #fff;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s;
   position: relative;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 .row-2 .col-4:hover {
   transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .row-2 .col-4 img {
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .row-2 .col-4 h4 {
@@ -917,16 +919,84 @@ margin: 10;
   color: #777;
 }
 
+select {
+  border: 1px solid #ff523b;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+select:focus {
+  outline: none;
+  border-color: #ff523b;
+}
 
 /*-------product section--*/
 .product-image {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-image:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.row-2 .col-4 img, .col-4 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box-shadow for subtle 3D effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.row-2 .col-4 img:hover, .col-4 img:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+.row-2 .col-4, .col-4 {
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  position: relative;
+  border-radius: 10px;
+  margin: 20px; /* Ensure consistent margin */
+}
+.row-2 .col-4, .col-4 {
+  flex-basis: 25%; /* Adjust as needed */
+  padding: 5px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+/*--product styling for consistency---*/
+.small-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+/*---product reponsive---*/
+@media only screen and (max-width: 768px) {
+  .col-4 {
+    flex-basis: 46%;
+    margin: 2%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .col-4 {
+    flex-basis: 100%;
+    margin: 10px 0;
+  }
 }
