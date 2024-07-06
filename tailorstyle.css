@@ -935,7 +935,7 @@ select:focus {
 /*-------product section--*/
 .product-image {
   width: 100%;
-  height: auto;
+  height: 270;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -978,25 +978,12 @@ select:focus {
   box-sizing: border-box;
 }
 /*--product styling for consistency---*/
-.small-container {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 /*---product reponsive---*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
   .col-4 {
     flex-basis: 46%;
-    margin: 2%;
+    margin: 1%;
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .col-4 {
-    flex-basis: 100%;
-    margin: 10px 0;
-  }
-}
+
